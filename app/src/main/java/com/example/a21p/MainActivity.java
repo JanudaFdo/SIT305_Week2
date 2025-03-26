@@ -39,19 +39,19 @@ public class MainActivity extends AppCompatActivity {
                     resultText.setText("Please enter your value");
                 }
 
-                double celcius = 0;
-                
-                try{
-                    celcius = Double.parseDouble(inputStr);
+                else {
+                    double celcius = 0;
+
+                    try {
+                        celcius = Double.parseDouble(inputStr);
+                    } catch (NumberFormatException e) {
+                        resultText.setText("Invalid Number");
+                    }
+
+                    double fahrenheit = (celcius * 1.8) + 32;
+
+                    resultText.setText(String.format("Result: %.2f F", fahrenheit));
                 }
-                catch (NumberFormatException e){
-                    resultText.setText("Invalid Number");
-                }
-
-                double fahrenheit = (celcius * 1.8) + 32;
-
-                resultText.setText(String.format("Result: %.2f F",fahrenheit));
-
             }
         });
 
